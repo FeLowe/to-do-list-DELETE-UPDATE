@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TaskTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-09T21:20:32" hostname="epicodus-58.local" time="0.144">
+  <properties/>
+  <testcase name="save_returnsTrueIfDescriptionsAretheSame" classname="TaskTest" time="0.011"/>
+  <testcase name="getDescription_taskWithDescription_String" classname="TaskTest" time="0.005"/>
+  <testcase name="addCategory_addsCategoryToTask" classname="TaskTest" time="0.025"/>
+  <testcase name="find_findsTasksInDatabase_True" classname="TaskTest" time="0.024"/>
+  <testcase name="getCategories_returnsAllCategories_List" classname="TaskTest" time="0.025"/>
+  <testcase name="equals_returnsTrueIfDescriptionsAreTheSame" classname="TaskTest" time="0.004"/>
+  <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.007"/>
+  <testcase name="delete_deletesAllTasksAndCategoriesAssociations" classname="TaskTest" time="0.022"/>
+  <testcase name="save_assignsIdToObject" classname="TaskTest" time="0.015"/>
+  <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
