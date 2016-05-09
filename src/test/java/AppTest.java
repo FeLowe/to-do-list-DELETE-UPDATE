@@ -95,14 +95,13 @@ public class AppTest extends FluentTest {
   }
   @Test
   public void taskUpdate() {
-    Category myCategory = new Category("Home");
-    myCategory.save();
-    Task myTask = new Task("Clean", myCategory.getId());
-    myTask.save();
-    String taskPath = String.format("http://localhost:4567/categories/%d/tasks/%d", myCategory.getId(), myTask.getId());
+    Task myUpdatedTask = new Task("Clean my room");
+    myUpdatedTask.save();
+    String taskPath = String.format("http://localhost:4567/tasks/%d", myUpdatedTask.getId());
     goTo(taskPath);
-    fill("#description").with("Dance");
+    click("a", withText("Edit this task"));
+    fill("#task-update").with("Clean my room");
     submit("#update-task");
-    assertThat(pageSource()).contains("Dance");
+    assertThat(pageSource()).contains("Clean my room");
   }
 }

@@ -86,5 +86,27 @@ public class App {
       response.redirect("/tasks/" + taskId);
       return null;
     });
+
+    get("/tasks/:id/edit", (request, response) -> {
+    HashMap<String, Object> model = new HashMap<String, Object>();
+      Task task = Task.find(Integer.parseInt(request.params(":id")));
+      model.put("task", task);
+      model.put("template", "templates/task-update.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/tasks/:id/edit", (request, response) -> {
+    HashMap<String, Object> model = new HashMap<String, Object>();
+      String newDescription = request.queryParams("task-update");
+      Task updatedTask = Task.find(Integer.parseInt(request.params(":id")));
+      updatedTask.update(newDescription);
+      updatedTask.save();
+      response.redirect("/tasks");
+      return null;
+    });
+    //   model.put("tasks", updatedTask);
+    //   model.put("template", "templates/task-update.vtl");
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine()});
   }
 }
